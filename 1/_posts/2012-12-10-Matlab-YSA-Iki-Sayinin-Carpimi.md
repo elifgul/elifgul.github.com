@@ -2,12 +2,13 @@
 layout: post
 title : Matlab'da Yapay Sinir Ağları ile İki Sayının Çarpımı
 ---
-<p> 
-Çarpma işleminde iki giriş ve bir çıkış vardır. 
+<p> Çarpma işleminde iki giriş ve bir çıkış vardır. 
 Eğitimde 20 adet rastgele sayı seçilmiş ve test aşamasında 
 yine 20 adet rastgele sayı seçilerek sistemin performansı ortaya konmuştur.
-
+</p> 
+<p> 
 Çarpma İşlemini yapan kod:
+</p> 
 
 `clear all, close all,clc;`
 

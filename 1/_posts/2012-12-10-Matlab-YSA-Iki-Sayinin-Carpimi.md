@@ -62,5 +62,5 @@ Ekran çıktıları:
 
 ![](http://photoload.ru/data/e4/8b/18/e48b185060fb0ff49be6da43e69e624b.jpg)
 
-![](http://s002.youpic.su/pictures/1355950800/7e1dbc62c2888dfc3aec0ecc321ffa7a.jpg)
+![](http://i.imgur.com/JAmW1.jpg)
 </p> 

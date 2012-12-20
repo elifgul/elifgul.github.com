@@ -1,6 +1,9 @@
 ---
+
 layout: post
-Matlab'ta Görüntü İşlemeye Giriş
+
+title : Matlab'ta Görüntü İşlemeye Giriş
+
 ---
 
 Akla ilk gelen sorular:
@@ -28,10 +31,11 @@ Görüntüde her piksel siyah ya da beyazdır. Siyahın renk değeri 0 ile ifade
  * Okutacağımız görüntü ile çalışacağımız konumun aynı olmasına dikkat edelim.
  * imread fonksiyonuna, Matlab'a okutacağımız görüntünün adını veririz. Erişim kolaylığı için atama işlemi yapılır.
  * imshow fonksiyonu ile okuttuğumuz görüntüyü ekranda görüntüleriz.
- 
- ' bw = imread('organlar.jpg'); '
 
- ' imshow(bw) '
+
+    bw = imread("organlar.jpg"); 
+    
+    imshow(bw)
 
 ![](http://i011.radikal.ru/1212/19/81cb8224d5f0.jpg)   
 

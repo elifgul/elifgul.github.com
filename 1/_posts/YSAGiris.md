@@ -1,35 +1,31 @@
 ---
+
 layout: post
-title: Yapay Sinir Ağları ile İki Sayının Çarpımı
+
+title: Yapay Sinir Ağlarına Giriş 
+
 ---
-Çarpma işlemi doğrusal olmayan bir işlemdir ve yapay zekâ için zor bir problemdir. Bu örnekte 1 ile 10 arasındaki sayıların çarpım işlemi YSA’ya öğretilmiştir. Çarpma işleminde iki giriş ve bir çıkış vardır. Eğitimde 20 adet rastgele sayı seçilmiş ve test aşamasında yine 20 adet rastgele sayı seçilerek sistemin performansı oraya konmuştur.
 
-'clear all, close all,clc;
-p=round(rand(2,20)*10) % Giris verisi 2x20’lik matris, rastgele 0-10
-t = p(1,:).*p(2,:)     % Cikis verisi p1*p2
+Matlab'da ileri beslemeli bir ağ nesnesi oluşturma komutu:
 
-%Normalizasyon islemi
-[pn,minp,maxp,tn,mint,maxt] = premnmx(p,t);
+    net = newff(PR,[S1 S2…SNl],{TF1 TF2…TFNl},BTF,BLF,PF)
 
-%YSA’nin tasarimi, egitimi ve simulasyonu
-net = newff(minmax(pn),[5 1],{'tansig' 'purelin'},'trainlm');
-net = train(net,pn,tn);
-an = sim(net,pn);
-[a] = postmnmx(an,mint,maxt); %Normalizasyonun tersi
+* PR  - R elemanlı giriş vektörünün minimum ve maksimum değerlerini içeren Rx2 ‘lik matris.
+* Si  - i’nci katmanda bulunan nöron sayısı. 
+* TFi - i’nci katmanın transfer fonksiyonu, varsayılan= 'tansig'.
+* BTF - Geriye yayılım ağ eğitim fonksiyonu, varsayılan = 'trainlm'.
+* BLF - Geriye yayılım ağırlık/bias öğrenme fonksiyonu, varsayılan = 'learngdm'.
+* PF  - Performans fonksiyonu, varsayılan = 'mse' dir.
 
-%Egitim verilerinin gercek ve YSA cikisinin gosterimi
-figure(1),plot3(p(1,:),p(2,:),t,'o');
-hold on,plot3(p(1,:),p(2,:),a,'r*'),grid on;
-legend('Gerçek deger','YSA cikisi'),xlabel('p1'),ylabel('p2'),zlabel('t'),title('Egitim verisi')
+Aşağıdaki kod ile iki katmanlı bir ağ oluştulur.
 
-%Test verilerinin hazirlanmasi, farkli 20 adet ornek
-ptest=round(rand(2,20)*10)
-ttest = ptest(1,:).*ptest(2,:)
-[ptn,minpt,maxpt,ttn,mintt,maxtt] = premnmx(ptest,ttest);
-atn = sim(net,ptn); %Simulasyon
-[at] = postmnmx(atn,mintt,maxtt);
+    net=newff([-1 2; 0 5],[3,1],{'tansig','purelin'},'traingd');
+    
+Tasarlanan ağın simülasyonu için sim komutu kullanılır. 
 
-%Test verilerinin gercek ve YSA cikisinin gosterimi
-figure(2),plot3(ptest(1,:),ptest(2,:),ttest,'o');
-hold on,plot3(ptest(1,:),ptest(2,:),at,'r*'),grid on;
-legend('Gerçek deger','YSA cikisi'),xlabel('p1'),ylabel('p2'),zlabel('t'),title('Test verisi')'
+Simülasyon ağa bir giriş değeri verip ağın çıkışını hesaplatmaktır.
+
+    p = [1;2];
+    a = sim(net,p)
+    a =
+       -0.1011

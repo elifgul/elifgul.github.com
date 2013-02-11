@@ -9,7 +9,8 @@ title: Yapay Sinir Ağları İle Karakter Tanıma
 
 Bu yazıda amacımız Matlab'da Yapay Sinir Ağları ile basit bir uygulama yapmak.
 
-Öncelikle ağımıziçin girdi değerlerimizi tanımlıyoruz.
+Öncelikle ağımız için girdi değerlerimizi tanımlıyoruz.
+
 * Bunlar aynı boyutlarda tek tek harflerden oluşan görüntülerdir.
 
 Anlatım kolaylığı açısından iki harf üzerinden gidelim.
@@ -22,7 +23,7 @@ Eğitimde kullanılan A ve B harfinin görüntüleri:
 ![](http://img94.imageshack.us/img94/6923/25130601.jpg)
 
 Ağımızın girdi ve çıktı elemamları numerik olmak zorundadır.
-Bu nedenle girdilerimize aşağdaki işlemler uygulanır.
+Bu nedenle girdilerimize aşağıdaki işlemler uygulanır.
 
     A = imw2bw(A);
     A = imresize(A,[50 50]);
@@ -70,7 +71,8 @@ Matlab'da newff fonksiyonuna gerekli argümanlar verilerek ağ oluşturulur.
 
 Ağı eğitmek için bazı parametreleri girmemiz gerekiyor.
 
-    performans parametresi sse = hata karelerinin toplamı
+Performans parametresi (sse = hata karelerinin toplamı):
+
     net.trainParam.perf='sse';
 
 Döngü sayısı:
@@ -110,7 +112,7 @@ Gürültü eklenen A harfi ile ağın test edilmesi:
       0.6906
       0.3094
 
-Görüldüğü üzere elde ettiğimiz sonuç matrisinin 1 satırı 1'e yakın ikinci satırı 0' yakındır.
+Görüldüğü üzere elde ettiğimiz sonuç matrisinin birinci satırı 1'e yakın ikinci satırı 0' yakındır.
 Bu da girdinin A harfi olduğunu göstermektedir.
 
 Hatanın yüksek olmasının nedeni ağ etimi sırasında eğitim setinin 

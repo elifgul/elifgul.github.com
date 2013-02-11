@@ -44,8 +44,8 @@ topluyoruz.
 
 Giris matrisinin; 
 
-* 1. sutünu A harfinin sutün değerini
-* 2. sutünu B harfinin sutün değerini tutmaktadır.
+* Birinci sutünu A harfinin sutün değerini
+* İkinci sutünu  B harfinin sutün değerini tutmaktadır.
 
 A ve B 'yi temsil etmek için bir de çıkış matrisine ihtiyacımız var.
 
@@ -71,15 +71,15 @@ Matlab'da newff fonksiyonuna gerekli argümanlar verilerek ağ oluşturulur.
 
 Ağı eğitmek için bazı parametreleri girmemiz gerekiyor.
 
-* Performans parametresi (sse = hata karelerinin toplamı):
+  Performans parametresi (sse = hata karelerinin toplamı):
 
     net.trainParam.perf='sse';
 
-* Döngü sayısı:
+  Döngü sayısı:
 
     net.trainParam.epochs=500;
 
-* Ağ eğtiminin sonlanma noktası:
+  Ağ eğtiminin sonlanma noktası:
     
     net.trainParam.goal=1e-5;
 
@@ -102,7 +102,7 @@ Bunun için A görüntüsüne biraz gürültü ekliyoruz.
 
 Gürültü eklenmiş A harfi:
 
-![](http://ib3.keep4u.ru/b/2013/02/11/d5/d533439bb7d9144c51dc4644f0a11203.jpg)
+![](http://s018.radikal.ru/i510/1302/46/98934c0973ee.jpg)
 
 Gürültü eklenen A harfi ile ağın test edilmesi:
 

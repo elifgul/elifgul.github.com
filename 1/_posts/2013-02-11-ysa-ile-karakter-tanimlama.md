@@ -43,6 +43,7 @@ topluyoruz.
     Giris(:,2) = B;
 
 Giris matrisinin; 
+
 * 1. sutünu A harfinin sutün değerini
 * 2. sutünu B harfinin sutün değerini tutmaktadır.
 
@@ -58,10 +59,9 @@ Ağda girişe uygun Cikis matrisi de iki durumdan oluşmaktadır.
 Bu harf ya A'dır ya da B'dir demenin numarik ifadesidir.
 
 Çıktı ;
+
 * ilk sutüna yakın değerler üretirse verilenin A harfi
 * ikinci sutüna yakın değerler alırsa girdinin B harfi olduğunu gösterir.
-
-
 
 Matlab'da newff fonksiyonuna gerekli argümanlar verilerek ağ oluşturulur.
 
@@ -71,15 +71,15 @@ Matlab'da newff fonksiyonuna gerekli argümanlar verilerek ağ oluşturulur.
 
 Ağı eğitmek için bazı parametreleri girmemiz gerekiyor.
 
-Performans parametresi (sse = hata karelerinin toplamı):
+* Performans parametresi (sse = hata karelerinin toplamı):
 
     net.trainParam.perf='sse';
 
-Döngü sayısı:
+* Döngü sayısı:
 
     net.trainParam.epochs=500;
 
-Ağ eğtiminin sonlanma noktası:
+* Ağ eğtiminin sonlanma noktası:
     
     net.trainParam.goal=1e-5;
 

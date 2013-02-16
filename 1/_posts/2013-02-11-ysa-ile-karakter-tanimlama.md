@@ -117,3 +117,46 @@ Bu da girdinin A harfi olduğunu göstermektedir.
 
 Hatanın yüksek olmasının nedeni ağ etimi sırasında eğitim setinin 
 az olmasıdır. Örnek sayısı artıkça hata oranı ters orantılı olarak azalacaktır.
+
+---
+
+Aynı uygulamayı Matlab'ın bize sunduğu nntool toolbox'ı ile yapalım.
+nntool komutu ile toolbox'ı açıyoruz.
+
+    nntool 
+
+Açılan arayüzde oluşturacağımız ağın girdi ve beklenen çıktı değerlerini 
+import ediyoruz.
+
+New butonuyla yeni bir ağ tanımlayoruz.
+
+Görüntüde olduğu gibi ağ parametrelerini seçtikten sonra Create tuşuyla 
+ağı oluşturuyoruz.
+
+![](http://images.vfl.ru/ii/1361009053/beec937e/1767039.jpg)
+
+Oluşan yapay sinir ağı :
+
+![](http://images.vfl.ru/ii/1361008723/660355b4/1766980.jpg)
+
+Arayüzde train menüsüyle ağın eğitmi için şekildeki parametreler seçilir.
+
+![](http://s2.ipicture.ru/uploads/20130216/VUUse935.jpg)
+![](http://images.vfl.ru/ii/1361008878/79106477/1767003.jpg)
+
+Tüm sonuçların programdan alınabilmesi için arayüzdeki export seçeneği kullanılabilir. 
+
+![](http://s002.youpic.su/pictures/1360962000/401872b8e06ea72bc5637e724d4d8784.jpg)
+
+Oluşturdumuz ağı ve elemanlarını seçerek Save tuşuyla .mat uzantılı olarak kaydedelim.
+
+Kaydedilen ağın çağrılması:
+
+    load karTan
+    
+Ağın gürültü eklenmiş A harfi ile test edilmesi:
+
+    X = sim(karTan, A);
+    
+    0.9987
+    0.5000
